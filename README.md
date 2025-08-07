@@ -41,7 +41,7 @@ Each problem in `testmini.json` contains:
 - `Category`: Problem category (PG, SG, LR, FG, SC)
 - `Difficulty`: Problem difficulty level
 - `EducationalStage`: Educational level (Primary, Middle, High.)
-- `QuestionType`: Type of question (MultipleChoice, FillInTheBlankm, ConstructedResponse)
+- `QuestionType`: Type of question (MultipleChoice, FillInTheBlank, ConstructedResponse)
 - Levels for image quality degradation, image perspective variation and
 
 ## Evaluation Pipeline
