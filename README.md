@@ -45,14 +45,16 @@
 2. **Real-World Images:** All questions are presented as handheld-device photographs taken in authentic educational settings, incorporating 3 main visual degradation types—image quality degradation, perspective variation, and irrelevant content interference—further divided into 14 subcategories.
 
 3. **Evaluation Metrics:** Includes 6 experimental settings designed to systematically test and compare MLLMs’ visual-mathematical reasoning abilities, enabling fine-grained error analysis in recognition, comprehension, and reasoning.
-<img src="./figures/main_example.pdf" alt="MathReal Overview" >
+<img src="./figures/main_example.png" alt="MathReal Overview" >
 
 ## 🍭 Results
-<img src="./figures/radar_12_axes_symmetric.pdf" alt="MathReal Radar" >
+<img src="./figures/radar_12_axes_symmetric.png" alt="MathReal Radar" >
 
 <img src="./figures/results.png" alt="MathReal results" >
 
-<img src="./figures/model_real_vs_clean.pdf" alt="MathReal Real and Clean" >
+<img src="./figures/5settings.png" alt="MathReal 5settings" >
+
+<img src="./figures/model_real_vs_clean.png" alt="MathReal Real and Clean" >
 
 
 **MathReal** demonstrates a significant challenge to MLLMs in real-world scenarios.
