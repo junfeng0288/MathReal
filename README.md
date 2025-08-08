@@ -23,11 +23,9 @@
 - [🎯 Datasets](#-datasets)
 - [✨ Getting Started](#-getting-started)
 - [🎁 Evaluation](#-evaluation)
-- [🖥️ Inference](#️-inference)
-- [🏝️ Reasoning Example](#-reasoning-example)
 - [🚧 TODO](#-todo)
 - [📮 Contact](#-contact)
-- [📄 Citation](#citation)
+<!-- - [📄 Citation](#citation) -->
 
 ## ⚡ News
 
@@ -47,10 +45,15 @@
 2. **Real-World Images:** All questions are presented as handheld-device photographs taken in authentic educational settings, incorporating 3 main visual degradation types—image quality degradation, perspective variation, and irrelevant content interference—further divided into 14 subcategories.
 
 3. **Evaluation Metrics:** Includes 6 experimental settings designed to systematically test and compare MLLMs’ visual-mathematical reasoning abilities, enabling fine-grained error analysis in recognition, comprehension, and reasoning.
+<img src="./figures/main_example.pdf" alt="MathReal Overview" >
 
 ## 🍭 Results
+<img src="./figures/radar_12_axes_symmetric.pdf" alt="MathReal Radar" >
 
 <img src="./figures/results.png" alt="MathReal results" >
+
+<img src="./figures/model_real_vs_clean.pdf" alt="MathReal Real and Clean" >
+
 
 **MathReal** demonstrates a significant challenge to MLLMs in real-world scenarios.
 
@@ -70,24 +73,6 @@ conda create -n mathreal python=3.12 -y && conda activate mathreal
 
 cd MathReal
 pip install -r requirements.txt
-```
-
-## 🎁 Evaluation
-
-### 🤖 Usage
-
-```plain
-usage: evaluate.py [-h] --model-name MODEL_NAME --dataset DATASET [--output-dir OUTPUT_DIR]
-
-Evaluate the model on the MathReal dataset.
-
-options:
-  -h, --help            show this help message and exit
-  --model-name MODEL_NAME
-                        The name of the model to evaluate
-  --dataset DATASET     The dataset to use for evaluation
-  --output-dir OUTPUT_DIR
-                        Directory to save evaluation results
 ```
 
 ## 🎁 Evaluation
