@@ -1,52 +1,96 @@
-# MathReal
+<div align="center">
 
-While Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in visual mathematical reasoning across various existing benchmarks, these benchmarks predominantly rely on clean or processed multimodal inputs, lacking the authentic complexity of real-world educational scenarios. To address this critical gap, we introduce **MathReal**, a meticulously curated dataset comprising 2,000 mathematical questions with images captured by handheld mobile devices in authentic Kindergarten through 12th grade (K–12) educational contexts. 
+  <h1 style="margin: 0; font-size: 1.8em;">
+    <!-- <img src="./figures/logo.png" alt="MathReal Icon" width="50" style="vertical-align: middle; margin-right: 10px;"> -->
+    MathReal: We Keep It Real! A Real Scene Benchmark for Evaluating Math Reasoning in Multimodal Large Language Models
+  </h1>
+    
+  [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2508.)<!--修改-->
+  [![Github](https://img.shields.io/badge/MathReal-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/junfeng0288/MathReal)
+  [![Hugging Face Collection](https://img.shields.io/badge/MathReal_Collection-fcd022?style=for-the-badge&logo=huggingface&logoColor=000)](https://huggingface.co/collections/junfeng0288/mathreal)
+  <!-- [![Twitter](https://img.shields.io/badge/Twitter-%23000000.svg?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/YourTwitterHandle) -->
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  ![](https://img.shields.io/github/last-commit/junfeng0288/MathReal?color=green) 
 
-Unlike existing datasets, MathReal captures the true challenges that MLLMs face in realistic educational environments, where images suffer from quality degradation, perspective variations, and content interference. Through systematic classification and comprehensive evaluation across six experimental settings, MathReal reveals that the problem-solving abilities of state-of-the-art MLLMs are significantly challenged in authentic educational scenarios, providing crucial insights for future model improvements.
+</div>
 
-## Dataset Overview
+## 📚 Overview
 
-MathReal provides mathematical problems across five key categories:
-- **Plane Geometry (PG)**
-- **Solid Geometry (SG)**
-- **Logical Reasoning (LR)**
-- **Function Graphs (FG)**
-- **Statistical Charts (SC)**
+- [📚 Overview](#-overview)
+- [⚡ News](#-news)
+- [📖 Introduction](#-introduction)
+- [🍭 Results](#-results)
+- [🎯 Datasets](#-datasets)
+- [✨ Getting Started](#-getting-started)
+- [🎁 Evaluation](#-evaluation)
+- [🖥️ Inference](#️-inference)
+- [🏝️ Reasoning Example](#-reasoning-example)
+- [🚧 TODO](#-todo)
+- [📮 Contact](#-contact)
+- [📄 Citation](#citation)
 
-## Dataset Structure
+## ⚡ News
 
+- [2025/08/08] 🔥 MathReal dataset is now open-source on [Hugging Face](https://huggingface.co/collections/junfeng0288/mathreal).
+<!-- - [2025/08/08] 🎉 Featured in the top datasets for multimodal learning on [Hugging Face](https://huggingface.co/datasets). -->
+- [2025/08/08] 🔥 MathReal paper available on [arXiv](https://arxiv.org/abs/2508).
+
+## 📖 Introduction
+
+**MathReal** is a 2,000-question dataset of visual math problems from authentic K–12 educational contexts, with images captured by handheld mobile devices that contain both question text and relevant figures. Unlike prior clean-input benchmarks, it reflects real-world complexity, classifying images into 3 main degradation types—image quality loss, perspective variation, and irrelevant content interference—further divided into 14 subcategories. Questions span 5 core knowledge/ability categories, 3 question types, and 3 difficulty levels. Six experimental settings evaluate 40 MLLMs, revealing substantial performance drops in realistic conditions. Detailed error analysis highlights challenges in recognition, comprehension, and reasoning, offering guidance for future model improvement.
+
+
+### 🔑 Key Features
+
+1. **Diverse Question Set:** Contains 2,000 K–12 mathematical questions spanning 5 core knowledge/ability categories, 3 question types, and 3 difficulty levels, covering a broad spectrum of curriculum-relevant topics.
+
+2. **Real-World Images:** All questions are presented as handheld-device photographs taken in authentic educational settings, incorporating 3 main visual degradation types—image quality degradation, perspective variation, and irrelevant content interference—further divided into 14 subcategories.
+
+3. **Evaluation Metrics:** Includes 6 experimental settings designed to systematically test and compare MLLMs’ visual-mathematical reasoning abilities, enabling fine-grained error analysis in recognition, comprehension, and reasoning.
+
+## 🍭 Results
+
+<img src="./figures/results.png" alt="MathReal results" >
+
+**MathReal** demonstrates a significant challenge to MLLMs in real-world scenarios.
+
+## 🎯 Datasets
+
+| **Dataset**                          | **Hugging Face** |  **Size** |
+|-----------------------------------|------------------|------------------|
+| MathReal(testmini) | https://huggingface.co/datasets/junfeng0288/mathreal |  480 |
+
+## ✨ Getting Started
+
+### 🔧 Installing
+
+You can install MathReal dependencies by running the following commands:
+```bash
+conda create -n mathreal python=3.12 -y && conda activate mathreal
+
+cd MathReal
+pip install -r requirements.txt
 ```
-MathReal/
-├── README.md
-├── json/
-│   └── testmini.json          # TestMini subset of MathReal dataset
-├── img/
-│   ├── clean/                 # Clean mathematical images (.png format)
-│   └── real/                  # Real-world scenario images (.jpg format)
-└── evaluate/                  # Evaluation pipeline scripts
-    ├── extract_answer_1.py    # Step 1: Extract answers from model outputs
-    ├── evaluation_answer_2.py # Step 2: Evaluate extracted answers
-    └── calculate_answer_3.py  # Step 3: Calculate final scores
+
+## 🎁 Evaluation
+
+### 🤖 Usage
+
+```plain
+usage: evaluate.py [-h] --model-name MODEL_NAME --dataset DATASET [--output-dir OUTPUT_DIR]
+
+Evaluate the model on the MathReal dataset.
+
+options:
+  -h, --help            show this help message and exit
+  --model-name MODEL_NAME
+                        The name of the model to evaluate
+  --dataset DATASET     The dataset to use for evaluation
+  --output-dir OUTPUT_DIR
+                        Directory to save evaluation results
 ```
 
-### Data Format
-
-Each problem in `testmini.json` contains:
-- `idx`: Unique identifier
-- `ImgReal`: Path to real-world image (`.jpg`)
-- `ImgClean`: Path to clean image (`.png`, may be null)
-- `QuestionCN`/`QuestionEN`: Problem statement in Chinese/English
-- `DescriptionCN`/`DescriptionEN`: Image description in Chinese/English
-- `AnswerCN`/`AnswerEN`: Ground truth answer in Chinese/English
-- `Category`: Problem category (PG, SG, LR, FG, SC)
-- `Difficulty`: Problem difficulty level
-- `EducationalStage`: Educational level (Primary, Middle, High.)
-- `QuestionType`: Type of question (MultipleChoice, FillInTheBlank, ConstructedResponse)
-- Levels for image quality degradation, image perspective variation and
-
-## Evaluation Pipeline
-
-The evaluation process follows a three-step pipeline:
+## 🎁 Evaluation
 
 ### Step 1: Extract Answers
 ```bash
@@ -55,7 +99,6 @@ python evaluate/extract_answer_1.py \
     --output <extracted_answers.json> \
     --timeout 10
 ```
-
 **Purpose**: Extracts final answers from raw model outputs using OpenAI API
 
 **Input**: JSON file containing model responses with `raw_output` field
@@ -69,7 +112,6 @@ python evaluate/evaluation_answer_2.py \
     --extract_file <extracted_answers.json> \
     --output_file <evaluation_results.json> 
 ```
-
 **Purpose**: Compares extracted answers with ground truth using sophisticated evaluation criteria
 
 **Features**:
@@ -80,9 +122,8 @@ python evaluate/evaluation_answer_2.py \
 
 ### Step 3: Calculate Final Scores
 ```bash
-python evaluate/calculate_answer_3.py <evaluation_results.json>
+python evaluate/calculate_answer_3.py <evaluation_results.json >
 ```
-
 **Purpose**: Computes category-wise and overall accuracy scores
 
 **Output**: 
@@ -90,45 +131,24 @@ python evaluate/calculate_answer_3.py <evaluation_results.json>
 - Overall accuracy metrics
 - Both strict and partial credit scoring
 
-## Image Types
 
-### Clean Images 
-- **Format**: PNG
-- **Description**: Clean, digitally rendered mathematical diagrams
-- **Purpose**: Baseline evaluation without real-world visual challenges
+<!-- 
+## 🏝️ Reasoning Example
 
-### Real Images 
-- **Format**: JPG  
-- **Description**: Real-world mathematical problems captured in natural settings
-- **Challenges**: Include blur, lighting variations, perspective distortions, and background interference
-- **Purpose**: Evaluate model robustness under realistic conditions
+An example of how the **MathReal** model processes a mathematical problem, showcasing its reasoning capabilities.
 
-## Real‑World Challenge Levels and Metrics
+![Reasoning Example](./figures/reasoning_example.png) -->
 
-Each problem includes detailed real‑world challenges across three primary categories:
+## 🚧 TODO
 
-**Image Quality Degradation**:
-- Blur
-- Underexposure/overexposure
-- Shadow coverage
-- Glare
+We are preparing to complete these tasks over the next few weeks, please stay tuned!
 
-**Image Perspective Variation**:
-- Rotation
-- In-plane tilt
-- Non-planar capture
-- Background distortion
+- 🚧 Release the whole test datasets.
 
-**Irrelevant Content Interference**:
-- Handwritten questions
-- Reverse side content
-- Question marking
-- Figure marking
-- Handwritten answer for multiple-choice questions
-- Handwritten process for constructed-response questions
+## 📮 Contact
 
-## Requirements
+For questions, feedback, or collaboration opportunities, feel free to reach out: junfeng0288@gmail.com
+<!-- 
+## 📄 Citation
 
-- Python 3.7+
-- OpenAI API access (for evaluation pipeline)
-- Required packages: `openai`, `tqdm`, `json`, `argparse`
+If you find our work useful for your research, please consider citing: -->
