@@ -11145,7 +11145,7 @@
       "glare": 0
     },
     "ImagePerspectiveVariation": {
-      "rotation": [],
+      "rotation": "Upright",
       "in-plane tilt": 1,
       "non-planar capture": 0,
       "background distortion": 1
