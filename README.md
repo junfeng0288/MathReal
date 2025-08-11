@@ -1,13 +1,12 @@
 <div align="center">
 
   <h1 style="margin: 0; font-size: 1.8em;">
-    <!-- <img src="./figures/logo.png" alt="MathReal Icon" width="50" style="vertical-align: middle; margin-right: 10px;"> -->
     MathReal: We Keep It Real! A Real Scene Benchmark for Evaluating Math Reasoning in Multimodal Large Language Models
   </h1>
     
-  [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2508.)<!--修改-->
+  [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2508.06009)<!--修改-->
   [![Github](https://img.shields.io/badge/MathReal-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/junfeng0288/MathReal)
-  [![Hugging Face Collection](https://img.shields.io/badge/MathReal_Collection-fcd022?style=for-the-badge&logo=huggingface&logoColor=000)](https://huggingface.co/collections/junfeng0288/mathreal)
+  [![Hugging Face Dataset](https://img.shields.io/badge/MathReal_Collection-fcd022?style=for-the-badge&logo=huggingface&logoColor=000)](https://huggingface.co/datasets/junfeng0288/MathReal)
   <!-- [![Twitter](https://img.shields.io/badge/Twitter-%23000000.svg?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/YourTwitterHandle) -->
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
   ![](https://img.shields.io/github/last-commit/junfeng0288/MathReal?color=green) 
@@ -25,13 +24,12 @@
 - [🎁 Evaluation](#-evaluation)
 - [🚧 TODO](#-todo)
 - [📮 Contact](#-contact)
-<!-- - [📄 Citation](#citation) -->
+- [📄 Citation](#citation)
 
 ## ⚡ News
 
-- [2025/08/08] 🔥 MathReal dataset is now open-source on [Hugging Face](https://huggingface.co/collections/junfeng0288/mathreal).
-<!-- - [2025/08/08] 🎉 Featured in the top datasets for multimodal learning on [Hugging Face](https://huggingface.co/datasets). -->
-- [2025/08/08] 🔥 MathReal paper available on [arXiv](https://arxiv.org/abs/2508).
+- [2025/08/11] 🔥 MathReal dataset is now open-source on [Hugging Face](https://huggingface.co/datasets/junfeng0288/MathReal).
+- [2025/08/08] 🔥 MathReal paper available on [arXiv](https://arxiv.org/abs/2508.06009).
 
 ## 📖 Introduction
 
@@ -119,12 +117,6 @@ python evaluate/calculate_answer_3.py <evaluation_results.json >
 - Both strict and partial credit scoring
 
 
-<!-- 
-## 🏝️ Reasoning Example
-
-An example of how the **MathReal** model processes a mathematical problem, showcasing its reasoning capabilities.
-
-![Reasoning Example](./figures/reasoning_example.png) -->
 
 ## 🚧 TODO
 
@@ -135,7 +127,17 @@ We are preparing to complete these tasks over the next few weeks, please stay tu
 ## 📮 Contact
 
 For questions, feedback, or collaboration opportunities, feel free to reach out: junfeng0288@gmail.com
-<!-- 
+
 ## 📄 Citation
 
-If you find our work useful for your research, please consider citing: -->
+If you find our work useful for your research, please consider citing:
+
+@misc{feng2025mathrealrealrealscene,
+      title={MathReal: We Keep It Real! A Real Scene Benchmark for Evaluating Math Reasoning in Multimodal Large Language Models}, 
+      author={Jun Feng and Zixin Wang and Zhentao Zhang and Yue Guo and Zhihan Zhou and Xiuyi Chen and Zhenyang Li and Dawei Yin},
+      year={2025},
+      eprint={2508.06009},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.06009}, 
+}
