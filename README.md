@@ -132,6 +132,7 @@ For questions, feedback, or collaboration opportunities, feel free to reach out:
 
 If you find our work useful for your research, please consider citing:
 
+```bash
 @misc{feng2025mathrealrealrealscene,
       title={MathReal: We Keep It Real! A Real Scene Benchmark for Evaluating Math Reasoning in Multimodal Large Language Models}, 
       author={Jun Feng and Zixin Wang and Zhentao Zhang and Yue Guo and Zhihan Zhou and Xiuyi Chen and Zhenyang Li and Dawei Yin},
@@ -141,3 +142,4 @@ If you find our work useful for your research, please consider citing:
       primaryClass={cs.CV},
       url={https://arxiv.org/abs/2508.06009}, 
 }
+```bash
